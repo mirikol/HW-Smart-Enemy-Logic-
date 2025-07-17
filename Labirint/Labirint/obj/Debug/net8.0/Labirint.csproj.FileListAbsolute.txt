@@ -1,0 +1,14 @@
+C:\Users\Кирил\source\repos\Labirint\Labirint\bin\Debug\net8.0\Labirint.exe
+C:\Users\Кирил\source\repos\Labirint\Labirint\bin\Debug\net8.0\Labirint.deps.json
+C:\Users\Кирил\source\repos\Labirint\Labirint\bin\Debug\net8.0\Labirint.runtimeconfig.json
+C:\Users\Кирил\source\repos\Labirint\Labirint\bin\Debug\net8.0\Labirint.dll
+C:\Users\Кирил\source\repos\Labirint\Labirint\bin\Debug\net8.0\Labirint.pdb
+C:\Users\Кирил\source\repos\Labirint\Labirint\obj\Debug\net8.0\Labirint.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Кирил\source\repos\Labirint\Labirint\obj\Debug\net8.0\Labirint.AssemblyInfoInputs.cache
+C:\Users\Кирил\source\repos\Labirint\Labirint\obj\Debug\net8.0\Labirint.AssemblyInfo.cs
+C:\Users\Кирил\source\repos\Labirint\Labirint\obj\Debug\net8.0\Labirint.csproj.CoreCompileInputs.cache
+C:\Users\Кирил\source\repos\Labirint\Labirint\obj\Debug\net8.0\Labirint.dll
+C:\Users\Кирил\source\repos\Labirint\Labirint\obj\Debug\net8.0\refint\Labirint.dll
+C:\Users\Кирил\source\repos\Labirint\Labirint\obj\Debug\net8.0\Labirint.pdb
+C:\Users\Кирил\source\repos\Labirint\Labirint\obj\Debug\net8.0\Labirint.genruntimeconfig.cache
+C:\Users\Кирил\source\repos\Labirint\Labirint\obj\Debug\net8.0\ref\Labirint.dll
