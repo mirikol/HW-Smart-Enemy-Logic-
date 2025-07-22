@@ -49,7 +49,7 @@
             if (map[newY, newX] == '#')
                 return false;
 
-            _renderer.SetPixel(X, Y, map[Y, X]);
+            _renderer.ClearPixel(X, Y, map);
 
             X = newX;
             Y = newY;

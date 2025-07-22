@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Labirint
+﻿namespace Labirint
 {
     public class VerticalObstacle : Unit
     {
@@ -19,10 +13,6 @@ namespace Labirint
 
         public override void Update()
         {
-            int oldX = X;
-            int oldY = Y;
-            char oldSymbol = _map[oldY, oldX];
-
             if (_obstracleDownDir)
             {
                 if (!TryMoveDown(_map))
@@ -33,8 +23,6 @@ namespace Labirint
                 if (!TryMoveUp(_map))
                     _obstracleDownDir = true;
             }
-
-            _renderer.SetPixel(oldX, oldY, oldSymbol);
         }
     }
 }

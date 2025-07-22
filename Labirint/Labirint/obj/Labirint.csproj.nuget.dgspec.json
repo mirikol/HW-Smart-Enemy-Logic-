@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Кирил\\source\\repos\\Labirint\\Labirint\\Labirint.csproj": {}
+    "C:\\Users\\Кирил\\MyFork\\HW-Smart-Enemy-Logic-\\Labirint\\Labirint\\Labirint.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Кирил\\source\\repos\\Labirint\\Labirint\\Labirint.csproj": {
+    "C:\\Users\\Кирил\\MyFork\\HW-Smart-Enemy-Logic-\\Labirint\\Labirint\\Labirint.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Кирил\\source\\repos\\Labirint\\Labirint\\Labirint.csproj",
+        "projectUniqueName": "C:\\Users\\Кирил\\MyFork\\HW-Smart-Enemy-Logic-\\Labirint\\Labirint\\Labirint.csproj",
         "projectName": "Labirint",
-        "projectPath": "C:\\Users\\Кирил\\source\\repos\\Labirint\\Labirint\\Labirint.csproj",
+        "projectPath": "C:\\Users\\Кирил\\MyFork\\HW-Smart-Enemy-Logic-\\Labirint\\Labirint\\Labirint.csproj",
         "packagesPath": "C:\\Users\\Кирил\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Кирил\\source\\repos\\Labirint\\Labirint\\obj\\",
+        "outputPath": "C:\\Users\\Кирил\\MyFork\\HW-Smart-Enemy-Logic-\\Labirint\\Labirint\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

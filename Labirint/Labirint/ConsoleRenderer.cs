@@ -18,13 +18,13 @@
 
         public void SetPixel(int x, int y, char val)
         {
-            if (x >= 0 && x < _width && y >= 0 && y < _height)
-            {
-                if (val == '#' || _pixels[x, y] != '#')
-                {
-                    _pixels[x, y] = val;
-                }
-            }
+            if (x < 0 || x >= _width || y < 0 || y >= _height)
+                return;
+
+            if (_pixels[x, y] == '#')
+                return;
+
+            _pixels[x, y] = val;
         }
 
         public void Render()
@@ -33,6 +33,14 @@
             {
                 for (int x = 0; x < _width; x++)
                 {
+                    if (_pixels[x, y] == '#' && _priviousPixels[x, y] != '#')
+                    {
+                        Console.SetCursorPosition(x, y);
+                        Console.Write('#');
+                        _priviousPixels[x, y] = '#';
+                        continue;
+                    }
+
                     if (_priviousPixels[x, y] == _pixels[x, y])
                         continue;
 
@@ -45,9 +53,16 @@
 
         public void ClearPixel(int x, int y, char[,] map)
         {
-            if (x >= 0 && x < _width && y >= 0 && y < _height)
+            if (x < 0 || x >= _width || y < 0 || y >= _height)
+                return;
+
+            if (y < map.GetLength(0) && x < map.GetLength(1))
             {
                 _pixels[x, y] = map[y, x];
+            }
+            else
+            {
+                _pixels[x, y] = ' ';
             }
         }
     }

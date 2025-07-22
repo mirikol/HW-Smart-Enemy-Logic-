@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Labirint
+﻿namespace Labirint
 {
     public class Player : Unit
     {
@@ -18,26 +11,30 @@ namespace Labirint
 
         public override void Update()
         {
-            ConsoleKeyInfo keyInfo;
-            if (Console.KeyAvailable)
-            {
-                keyInfo = Console.ReadKey();
+            if (!Console.KeyAvailable)
+                return;
 
-                switch (keyInfo.Key)
-                {
-                    case ConsoleKey.UpArrow:
-                        TryMoveUp(_map);
-                        break;
-                    case ConsoleKey.DownArrow:
-                        TryMoveDown(_map);
-                        break;
-                    case ConsoleKey.RightArrow:
-                        TryMoveRight(_map);
-                        break;
-                    case ConsoleKey.LeftArrow:
-                        TryMoveLeft(_map);
-                        break;
-                }
+            ConsoleKeyInfo key = Console.ReadKey(true);
+
+            switch (key.Key)
+            {
+                case ConsoleKey.UpArrow:
+                    TryMoveUp(_map);
+                    break;
+                case ConsoleKey.DownArrow:
+                    TryMoveDown(_map);
+                    break;
+                case ConsoleKey.RightArrow:
+                    TryMoveRight(_map);
+                    break;
+                case ConsoleKey.LeftArrow:
+                    TryMoveLeft(_map);
+                    break;
+            }
+
+            while (Console.KeyAvailable)
+            {
+                Console.ReadKey(true);
             }
         }
     }

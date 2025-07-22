@@ -22,7 +22,7 @@
                 return;
 
             Node nextPosition = path[1];
-            TryChangePosition(nextPosition.X, nextPosition.Y, _map); 
+            TryChangePosition(nextPosition.X, nextPosition.Y, _map);
         }
 
         public List<Node> FindPath()
@@ -81,7 +81,6 @@
                     }
                 }
             }
-
             return null;
         }
 
