@@ -1,26 +1,22 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 
 namespace Labirint
 {
-    public class Units : IEnumerable
+    public class Units : IEnumerable<Unit>
     {
         private List<Unit> _units = new();
 
-        public void Add(Unit unit)
-        {
-            _units.Add(unit);
-        }
+        public void Add(Unit unit) => _units.Add(unit);
+        public void Remove(Unit unit) => _units.Remove(unit);
 
-        public void Remove(Unit unit)
-        {
-            _units.Remove(unit);
-        }
+        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
 
-        public IEnumerator GetEnumerator()
+        public IEnumerator<Unit> GetEnumerator()
         {
-            for (int i = 0; i < _units.Count; i++)
+            foreach (var unit in _units)
             {
-                yield return _units[i];
+                yield return unit;
             }
         }
     }
