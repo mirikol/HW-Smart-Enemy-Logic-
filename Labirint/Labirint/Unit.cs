@@ -1,63 +1,80 @@
 ﻿namespace Labirint
 {
     public abstract class Unit
-
     {
-        public int X { get; private set; }
-        public int Y { get; private set; }
-        private char _symbol;
+        public Vector2 Position { get; protected set; }
+        public Vector2 StartPosition { get; private set; }
+        public char Symbol { get; private set; }
+
         protected ConsoleRenderer _renderer;
 
-        public Unit(int startX, int startY, char symbol, ConsoleRenderer renderer)
+        public Unit(Vector2 startPosition, char symbol, ConsoleRenderer renderer)
         {
-            X = startX;
-            Y = startY;
-            _symbol = symbol;
+            StartPosition = startPosition;
+            Position = startPosition;
+            Symbol = symbol;
             _renderer = renderer;
-
-            _renderer.SetPixel(X, Y, _symbol);
         }
 
-        public virtual bool TryMoveLeft(char[,] map)
+        public virtual bool TryMoveLeft()
         {
-            return TryChangePosition(X - 1, Y, map);
+            return TryChangePosition(new Vector2(Position.X - 1, Position.Y));
         }
 
-        public virtual bool TryMoveRight(char[,] map)
+        public virtual bool TryMoveRight()
         {
-            return TryChangePosition(X + 1, Y, map);
+            return TryChangePosition(new Vector2(Position.X + 1, Position.Y));
         }
 
-        public virtual bool TryMoveUp(char[,] map)
+        public virtual bool TryMoveUp()
         {
-            return TryChangePosition(X, Y - 1, map);
+            return TryChangePosition(new Vector2(Position.X, Position.Y - 1));
         }
 
-        public virtual bool TryMoveDown(char[,] map)
+        public virtual bool TryMoveDown()
         {
-            return TryChangePosition(X, Y + 1, map);
+            return TryChangePosition(new Vector2(Position.X, Position.Y + 1));
         }
-        protected virtual bool TryChangePosition(int newX, int newY, char[,] map)
+        protected virtual bool TryChangePosition(Vector2 newPosition)
         {
+            char[,] map = GameData.GetInstance().GetMap();
             if (map == null || _renderer == null)
-            {
-                return false;
-            }
-            if (newX < 0 || newX >= map.GetLength(1) || newY < 0 || newY >= map.GetLength(0))
                 return false;
 
-            if (map[newY, newX] == '#')
+            if (newPosition.X < 0 || newPosition.X >= map.GetLength(1) ||
+                newPosition.Y < 0 || newPosition.Y >= map.GetLength(0))
                 return false;
 
-            _renderer.ClearPixel(X, Y, map);
+            if (map[newPosition.Y, newPosition.X] == '#')
+                return false;
 
-            X = newX;
-            Y = newY;
+            _renderer.ClearPixel(Position.X, Position.Y, map);
 
-            _renderer.SetPixel(X, Y, _symbol);
+            Position = newPosition;
+
+            _renderer.SetPixel(Position.X, Position.Y, Symbol);
             return true;
         }
 
+        public void Render()
+        {
+            _renderer.SetPixel(Position.X, Position.Y, Symbol);
+        }
+
+        public void ResetPosition()
+        {
+            char[,] map = GameData.GetInstance().GetMap();
+            if (map == null)
+                return;
+
+            _renderer.ClearPixel(Position.X, Position.Y, map);
+            Position = StartPosition;
+            _renderer.SetPixel(Position.X, Position.Y, Symbol);
+        }
+
+        public virtual void Unsubscribe()
+        {
+        }
         public abstract void Update();
     }
 }

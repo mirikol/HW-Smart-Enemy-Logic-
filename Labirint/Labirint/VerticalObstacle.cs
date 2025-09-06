@@ -3,26 +3,28 @@
     public class VerticalObstacle : Unit
     {
         private bool _obstracleDownDir = true;
-        private char[,] _map;
 
-        public VerticalObstacle(int startX, int startY, char symbol, ConsoleRenderer renderer, char[,] map) :
-            base(startX, startY, symbol, renderer)
+        public VerticalObstacle(Vector2 startPosition, char symbol, ConsoleRenderer renderer) :
+            base(startPosition, symbol, renderer)
         {
-            _map = map;
         }
 
         public override void Update()
         {
             if (_obstracleDownDir)
             {
-                if (!TryMoveDown(_map))
+                if (!TryMoveDown())
                     _obstracleDownDir = false;
             }
             else
             {
-                if (!TryMoveUp(_map))
+                if (!TryMoveUp())
                     _obstracleDownDir = true;
             }
+        }
+        public override void Unsubscribe()
+        {
+            base.Unsubscribe();
         }
     }
 }

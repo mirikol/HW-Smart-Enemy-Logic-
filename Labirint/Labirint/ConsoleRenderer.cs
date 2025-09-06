@@ -65,5 +65,16 @@
                 _pixels[x, y] = ' ';
             }
         }
+        public void Clear()
+        {
+            for (int y = 0; y < _height; y++)
+            {
+                for (int x = 0; x < _width; x++)
+                {
+                    _pixels[x, y] = ' ';
+                    _priviousPixels[x, y] = ' ';
+                }
+            }
+        }
     }
 }

@@ -2,9 +2,92 @@
 {
     internal class Program
     {
+        private static Player _player;
+        private static SmartEnemy _enemy;
+        private static VerticalObstacle _obstacle;
         static void Main(string[] args)
         {
-            char[,] map = new[,]
+            ConsoleRenderer renderer = new ConsoleRenderer();
+            ConsoleInput input = new ConsoleInput();
+            GameData gameData = GameData.GetInstance();
+
+            Dictionary<string, char[,]> levelMaps = LoadLevelMaps();
+            gameData.SetLevelMaps(levelMaps);
+
+            LevelsMenu levelsMenu = new LevelsMenu(input, renderer, gameData);
+            levelsMenu.ShowMenu();
+
+
+            while (true)
+            {
+                input.Update();
+
+                foreach (Unit unit in gameData.GetUnits())
+                {
+                    unit.Update();
+                }
+
+                renderer.Render();
+
+                Thread.Sleep(400);
+
+                if (_player != null)
+                {
+                    foreach (Unit unit in gameData.GetUnits())
+                    {
+                        if (unit == _player)
+                            continue;
+
+                        if (_player.Position.Equals(unit.Position))
+                        {
+                            GameOver();
+                        }
+                    }
+                }
+
+            }
+        }
+
+        public static void ClearAllUnits()
+        {
+            if (_player != null)
+            {
+                _player.Unsubscribe();
+                _player = null;
+            }
+
+            if (_enemy != null)
+            {
+                _enemy.SetTarget(null);
+                _enemy.Unsubscribe();
+                _enemy = null;
+            }
+
+            if (_obstacle != null)
+            {
+                _obstacle.Unsubscribe();
+                _obstacle = null;
+            }
+        }
+
+        public static void SetPlayer(Player player)
+        {
+            _player = player;
+        }
+        public static void SetEnemy(SmartEnemy enemy)
+        {
+            _enemy = enemy;
+        }
+
+        public static void SetObstacle(VerticalObstacle obstacle)
+        {
+            _obstacle = obstacle;
+        }
+        static Dictionary<string, char[,]> LoadLevelMaps()
+        {
+            var levelMaps = new Dictionary<string, char[,]>();
+
+            levelMaps["Level 1"] = new[,]
             {
                 {'#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#'},
                 {'#',' ',' ',' ',' ',' ',' ',' ',' ','#',' ',' ',' ',' ',' ','#',' ',' ',' ','#'},
@@ -28,58 +111,35 @@
                 {'#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#'},
             };
 
-            ConsoleRenderer renderer = new ConsoleRenderer();
-            SetMapPixels(map, renderer);
-            Player player = new Player(1, 1, renderer, map);
-            VerticalObstacle obstacle = new VerticalObstacle(2, 5, '!', renderer, map);
-            SmartEnemy enemy = new SmartEnemy(16, 8, '$', renderer, map, player);
-
-            Units units = new Units();
-            units.Add(player);
-            units.Add(obstacle);
-            units.Add(enemy);
-
-            renderer.Render();
-
-            while (true)
+            levelMaps["Level 2"] = new[,]
             {
-                foreach (Unit unit in units)
-                {
-                    unit.Update();
-                }
+                {'#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#'},
+                {'#',' ',' ',' ',' ',' ',' ',' ',' ','#',' ',' ',' ',' ',' ','#',' ',' ',' ','#'},
+                {'#',' ',' ','#',' ',' ',' ',' ',' ','#',' ',' ',' ',' ',' ','#',' ',' ',' ','#'},
+                {'#',' ',' ','#',' ',' ',' ',' ',' ','#',' ',' ',' ',' ',' ',' ',' ',' ',' ','#'},
+                {'#',' ',' ','#',' ',' ',' ',' ',' ','#',' ',' ',' ',' ',' ',' ',' ',' ',' ','#'},
+                {'#',' ',' ','#',' ',' ',' ',' ',' ','#',' ',' ',' ',' ',' ',' ',' ',' ',' ','#'},
+                {'#',' ',' ','#',' ',' ',' ',' ',' ','#',' ',' ',' ',' ',' ',' ',' ',' ',' ','#'},
+                {'#',' ',' ','#',' ',' ',' ',' ',' ','#',' ',' ',' ',' ',' ',' ',' ',' ',' ','#'},
+                {'#',' ',' ','#',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','#'},
+                {'#',' ',' ','#','#',' ','#','#','#','#','#',' ',' ','#','#','#','#','#',' ','#'},
+                {'#',' ',' ','#','#',' ','#','#','#','#','#',' ',' ','#','#','#','#','#',' ','#'},
+                {'#',' ',' ','#',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','#',' ',' ',' ','#'},
+                {'#',' ',' ','#',' ',' ','#',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','#'},
+                {'#',' ',' ','#',' ',' ','#',' ',' ',' ',' ',' ',' ',' ',' ','#',' ',' ',' ','#'},
+                {'#',' ',' ','#','#','#','#',' ',' ','#','#','#','#','#','#','#',' ',' ',' ','#'},
+                {'#',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','#',' ',' ',' ',' ',' ','#'},
+                {'#',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','#',' ','#',' ',' ',' ','#'},
+                {'#',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','#',' ','#',' ',' ',' ','#'},
+                {'#',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','#',' ',' ',' ','#'},
+                {'#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#'},
+            };
 
-                renderer.Render();
-
-                Thread.Sleep(400);
-
-                foreach (Unit unit in units)
-                {
-                    if (unit == player)
-                        continue;
-
-                    if ((player.X == obstacle.X && player.Y == obstacle.Y) ||
-                            (player.X == enemy.X && player.Y == enemy.Y))
-                    {
-                        GameOver();
-                    }
-                }
-            }
+            return levelMaps;
         }
-
         static void GameOver()
         {
             Environment.Exit(0);
-        }
-
-        static void SetMapPixels(char[,] map, ConsoleRenderer renderer)
-        {
-            for (int y = 0; y < map.GetLength(0); y++)
-            {
-                for (int x = 0; x < map.GetLength(1); x++)
-                {
-                    renderer.SetPixel(x, y, map[y, x]);
-                }
-            }
         }
     }
 }
