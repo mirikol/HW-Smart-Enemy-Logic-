@@ -2,140 +2,55 @@
 {
     internal class Program
     {
-        private static Player _player;
-        private static SmartEnemy _enemy;
-        private static VerticalObstacle _obstacle;
         static void Main(string[] args)
         {
-            ConsoleRenderer renderer = new ConsoleRenderer();
+            GameData data = new GameData();
+            IRenderer renderer = new ConsoleRenderer();
             ConsoleInput input = new ConsoleInput();
-            GameData gameData = GameData.GetInstance();
+            UnitFactory unitFactory = new UnitFactory(renderer, input);
+            LevelsMenu levelsMenu = new LevelsMenu(data, input, renderer, unitFactory);
 
-            Dictionary<string, char[,]> levelMaps = LoadLevelMaps();
-            gameData.SetLevelMaps(levelMaps);
+            levelsMenu.SetMenu();
 
-            LevelsMenu levelsMenu = new LevelsMenu(input, renderer, gameData);
-            levelsMenu.ShowMenu();
+            renderer.Render();
 
-
+            if (LevelModel.Player != null)
+            {
+                LevelModel.Player.GameOver += GameOver;
+            }
             while (true)
             {
-                input.Update();
-
-                foreach (Unit unit in gameData.GetUnits())
+                try
                 {
-                    unit.Update();
+                    input.Update();
+                }
+                catch (NullReferenceException ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+
+                if (LevelModel.Units != null)
+                {
+                    var unitsCopy = LevelModel.Units.ToList();
+
+                    foreach (Unit unit in unitsCopy)
+                    {
+                        unit.Update();
+                    }
+
+                    foreach (Unit unit in unitsCopy)
+                    {
+                        if (unit is NextLevelTrigger trigger)
+                        {
+                            trigger.TriggerIfNeeded();
+                        }
+                    }
                 }
 
                 renderer.Render();
 
                 Thread.Sleep(400);
-
-                if (_player != null)
-                {
-                    foreach (Unit unit in gameData.GetUnits())
-                    {
-                        if (unit == _player)
-                            continue;
-
-                        if (_player.Position.Equals(unit.Position))
-                        {
-                            GameOver();
-                        }
-                    }
-                }
-
             }
-        }
-
-        public static void ClearAllUnits()
-        {
-            if (_player != null)
-            {
-                _player.Unsubscribe();
-                _player = null;
-            }
-
-            if (_enemy != null)
-            {
-                _enemy.SetTarget(null);
-                _enemy.Unsubscribe();
-                _enemy = null;
-            }
-
-            if (_obstacle != null)
-            {
-                _obstacle.Unsubscribe();
-                _obstacle = null;
-            }
-        }
-
-        public static void SetPlayer(Player player)
-        {
-            _player = player;
-        }
-        public static void SetEnemy(SmartEnemy enemy)
-        {
-            _enemy = enemy;
-        }
-
-        public static void SetObstacle(VerticalObstacle obstacle)
-        {
-            _obstacle = obstacle;
-        }
-        static Dictionary<string, char[,]> LoadLevelMaps()
-        {
-            var levelMaps = new Dictionary<string, char[,]>();
-
-            levelMaps["Level 1"] = new[,]
-            {
-                {'#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#'},
-                {'#',' ',' ',' ',' ',' ',' ',' ',' ','#',' ',' ',' ',' ',' ','#',' ',' ',' ','#'},
-                {'#',' ',' ','#',' ',' ',' ',' ',' ','#',' ',' ',' ',' ',' ','#',' ',' ',' ','#'},
-                {'#',' ',' ','#',' ',' ',' ',' ',' ','#',' ',' ',' ',' ',' ',' ',' ',' ',' ','#'},
-                {'#',' ',' ','#',' ',' ',' ',' ',' ','#',' ',' ',' ',' ',' ','#',' ',' ',' ','#'},
-                {'#',' ',' ','#',' ',' ',' ',' ',' ','#',' ',' ',' ',' ',' ','#',' ',' ',' ','#'},
-                {'#',' ',' ','#',' ',' ',' ',' ',' ','#',' ',' ',' ',' ',' ','#',' ',' ',' ','#'},
-                {'#',' ',' ','#',' ',' ',' ',' ',' ','#',' ',' ',' ',' ',' ','#',' ',' ',' ','#'},
-                {'#',' ',' ','#',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','#',' ',' ',' ','#'},
-                {'#',' ','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#',' ','#'},
-                {'#',' ','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#',' ','#'},
-                {'#',' ',' ','#',' ',' ',' ',' ',' ','#',' ',' ',' ',' ',' ','#',' ',' ',' ','#'},
-                {'#',' ',' ','#',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','#'},
-                {'#',' ',' ','#',' ',' ',' ',' ',' ','#',' ',' ',' ',' ',' ','#',' ',' ',' ','#'},
-                {'#',' ',' ','#',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','#',' ',' ',' ','#'},
-                {'#',' ',' ',' ',' ',' ',' ',' ',' ','#',' ',' ',' ',' ',' ','#',' ',' ',' ','#'},
-                {'#',' ',' ','#',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','#',' ',' ',' ','#'},
-                {'#',' ',' ',' ',' ',' ',' ',' ',' ','#',' ',' ',' ',' ',' ','#',' ',' ',' ','#'},
-                {'#',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','#',' ',' ',' ','#'},
-                {'#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#'},
-            };
-
-            levelMaps["Level 2"] = new[,]
-            {
-                {'#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#'},
-                {'#',' ',' ',' ',' ',' ',' ',' ',' ','#',' ',' ',' ',' ',' ','#',' ',' ',' ','#'},
-                {'#',' ',' ','#',' ',' ',' ',' ',' ','#',' ',' ',' ',' ',' ','#',' ',' ',' ','#'},
-                {'#',' ',' ','#',' ',' ',' ',' ',' ','#',' ',' ',' ',' ',' ',' ',' ',' ',' ','#'},
-                {'#',' ',' ','#',' ',' ',' ',' ',' ','#',' ',' ',' ',' ',' ',' ',' ',' ',' ','#'},
-                {'#',' ',' ','#',' ',' ',' ',' ',' ','#',' ',' ',' ',' ',' ',' ',' ',' ',' ','#'},
-                {'#',' ',' ','#',' ',' ',' ',' ',' ','#',' ',' ',' ',' ',' ',' ',' ',' ',' ','#'},
-                {'#',' ',' ','#',' ',' ',' ',' ',' ','#',' ',' ',' ',' ',' ',' ',' ',' ',' ','#'},
-                {'#',' ',' ','#',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','#'},
-                {'#',' ',' ','#','#',' ','#','#','#','#','#',' ',' ','#','#','#','#','#',' ','#'},
-                {'#',' ',' ','#','#',' ','#','#','#','#','#',' ',' ','#','#','#','#','#',' ','#'},
-                {'#',' ',' ','#',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','#',' ',' ',' ','#'},
-                {'#',' ',' ','#',' ',' ','#',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','#'},
-                {'#',' ',' ','#',' ',' ','#',' ',' ',' ',' ',' ',' ',' ',' ','#',' ',' ',' ','#'},
-                {'#',' ',' ','#','#','#','#',' ',' ','#','#','#','#','#','#','#',' ',' ',' ','#'},
-                {'#',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','#',' ',' ',' ',' ',' ','#'},
-                {'#',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','#',' ','#',' ',' ',' ','#'},
-                {'#',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','#',' ','#',' ',' ',' ','#'},
-                {'#',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','#',' ',' ',' ','#'},
-                {'#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#','#'},
-            };
-
-            return levelMaps;
         }
         static void GameOver()
         {

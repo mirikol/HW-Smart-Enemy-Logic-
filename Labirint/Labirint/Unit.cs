@@ -1,18 +1,18 @@
 ﻿namespace Labirint
 {
-    public abstract class Unit
+    public abstract class Unit : IDisposable
     {
         public Vector2 Position { get; protected set; }
         public Vector2 StartPosition { get; private set; }
-        public char Symbol { get; private set; }
+        public string _view;
 
-        protected ConsoleRenderer _renderer;
+        protected IRenderer _renderer;
 
-        public Unit(Vector2 startPosition, char symbol, ConsoleRenderer renderer)
+        public Unit(Vector2 startPosition, string view, IRenderer renderer)
         {
             StartPosition = startPosition;
             Position = startPosition;
-            Symbol = symbol;
+            _view = view;
             _renderer = renderer;
         }
 
@@ -37,7 +37,7 @@
         }
         protected virtual bool TryChangePosition(Vector2 newPosition)
         {
-            char[,] map = GameData.GetInstance().GetMap();
+            char[,] map = LevelModel.GetMap();
             if (map == null || _renderer == null)
                 return false;
 
@@ -52,29 +52,33 @@
 
             Position = newPosition;
 
-            _renderer.SetPixel(Position.X, Position.Y, Symbol);
+            _renderer.SetCell(Position.X, Position.Y, _view);
             return true;
         }
 
         public void Render()
         {
-            _renderer.SetPixel(Position.X, Position.Y, Symbol);
+            _renderer.SetCell(Position.X, Position.Y, _view);
         }
 
-        public void ResetPosition()
+        public virtual void ResetPosition()
         {
-            char[,] map = GameData.GetInstance().GetMap();
+            char[,] map = LevelModel.GetMap();
             if (map == null)
                 return;
 
             _renderer.ClearPixel(Position.X, Position.Y, map);
             Position = StartPosition;
-            _renderer.SetPixel(Position.X, Position.Y, Symbol);
+            _renderer.SetCell(Position.X, Position.Y, _view);
         }
 
         public virtual void Unsubscribe()
         {
         }
         public abstract void Update();
+
+        public virtual void Dispose()
+        {
+        }
     }
 }

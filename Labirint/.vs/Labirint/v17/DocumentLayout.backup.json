@@ -11,12 +11,12 @@
       "RelativeMoniker": "D:0:0:{A36A4724-D92C-4C93-B6C0-B13BA597671F}|Labirint\\Labirint.csproj|solutionrelative:labirint\\vector2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A36A4724-D92C-4C93-B6C0-B13BA597671F}|Labirint\\Labirint.csproj|c:\\users\\\u043A\u0438\u0440\u0438\u043B\\myfork\\hw-smart-enemy-logic-\\labirint\\labirint\\unitsenumerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A36A4724-D92C-4C93-B6C0-B13BA597671F}|Labirint\\Labirint.csproj|solutionrelative:labirint\\unitsenumerator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A36A4724-D92C-4C93-B6C0-B13BA597671F}|Labirint\\Labirint.csproj|c:\\users\\\u043A\u0438\u0440\u0438\u043B\\myfork\\hw-smart-enemy-logic-\\labirint\\labirint\\unitfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A36A4724-D92C-4C93-B6C0-B13BA597671F}|Labirint\\Labirint.csproj|solutionrelative:labirint\\unitfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A36A4724-D92C-4C93-B6C0-B13BA597671F}|Labirint\\Labirint.csproj|c:\\users\\\u043A\u0438\u0440\u0438\u043B\\myfork\\hw-smart-enemy-logic-\\labirint\\labirint\\units.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A36A4724-D92C-4C93-B6C0-B13BA597671F}|Labirint\\Labirint.csproj|solutionrelative:labirint\\units.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A36A4724-D92C-4C93-B6C0-B13BA597671F}|Labirint\\Labirint.csproj|c:\\users\\\u043A\u0438\u0440\u0438\u043B\\myfork\\hw-smart-enemy-logic-\\labirint\\labirint\\unitconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A36A4724-D92C-4C93-B6C0-B13BA597671F}|Labirint\\Labirint.csproj|solutionrelative:labirint\\unitconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A36A4724-D92C-4C93-B6C0-B13BA597671F}|Labirint\\Labirint.csproj|c:\\users\\\u043A\u0438\u0440\u0438\u043B\\myfork\\hw-smart-enemy-logic-\\labirint\\labirint\\unit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -39,8 +39,20 @@
       "RelativeMoniker": "D:0:0:{A36A4724-D92C-4C93-B6C0-B13BA597671F}|Labirint\\Labirint.csproj|solutionrelative:labirint\\node.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{A36A4724-D92C-4C93-B6C0-B13BA597671F}|Labirint\\Labirint.csproj|c:\\users\\\u043A\u0438\u0440\u0438\u043B\\myfork\\hw-smart-enemy-logic-\\labirint\\labirint\\nextleveltrigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A36A4724-D92C-4C93-B6C0-B13BA597671F}|Labirint\\Labirint.csproj|solutionrelative:labirint\\nextleveltrigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A36A4724-D92C-4C93-B6C0-B13BA597671F}|Labirint\\Labirint.csproj|c:\\users\\\u043A\u0438\u0440\u0438\u043B\\myfork\\hw-smart-enemy-logic-\\labirint\\labirint\\levelsmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A36A4724-D92C-4C93-B6C0-B13BA597671F}|Labirint\\Labirint.csproj|solutionrelative:labirint\\levelsmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A36A4724-D92C-4C93-B6C0-B13BA597671F}|Labirint\\Labirint.csproj|c:\\users\\\u043A\u0438\u0440\u0438\u043B\\myfork\\hw-smart-enemy-logic-\\labirint\\labirint\\levelmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A36A4724-D92C-4C93-B6C0-B13BA597671F}|Labirint\\Labirint.csproj|solutionrelative:labirint\\levelmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A36A4724-D92C-4C93-B6C0-B13BA597671F}|Labirint\\Labirint.csproj|c:\\users\\\u043A\u0438\u0440\u0438\u043B\\myfork\\hw-smart-enemy-logic-\\labirint\\labirint\\irenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A36A4724-D92C-4C93-B6C0-B13BA597671F}|Labirint\\Labirint.csproj|solutionrelative:labirint\\irenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A36A4724-D92C-4C93-B6C0-B13BA597671F}|Labirint\\Labirint.csproj|c:\\users\\\u043A\u0438\u0440\u0438\u043B\\myfork\\hw-smart-enemy-logic-\\labirint\\labirint\\imoveinput.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -66,7 +78,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 16,
           "Children": [
             {
               "$type": "Bookmark",
@@ -86,132 +98,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Vector2.cs",
-              "DocumentMoniker": "C:\\Users\\\u041A\u0438\u0440\u0438\u043B\\MyFork\\HW-Smart-Enemy-Logic-\\Labirint\\Labirint\\Vector2.cs",
-              "RelativeDocumentMoniker": "Labirint\\Vector2.cs",
-              "ToolTip": "C:\\Users\\\u041A\u0438\u0440\u0438\u043B\\MyFork\\HW-Smart-Enemy-Logic-\\Labirint\\Labirint\\Vector2.cs",
-              "RelativeToolTip": "Labirint\\Vector2.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAABAAAAAAAAAA==",
+              "DocumentIndex": 11,
+              "Title": "LevelModel.cs",
+              "DocumentMoniker": "C:\\Users\\\u041A\u0438\u0440\u0438\u043B\\MyFork\\HW-Smart-Enemy-Logic-\\Labirint\\Labirint\\LevelModel.cs",
+              "RelativeDocumentMoniker": "Labirint\\LevelModel.cs",
+              "ToolTip": "C:\\Users\\\u041A\u0438\u0440\u0438\u043B\\MyFork\\HW-Smart-Enemy-Logic-\\Labirint\\Labirint\\LevelModel.cs",
+              "RelativeToolTip": "Labirint\\LevelModel.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAcwDIAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-06T04:30:57.991Z",
+              "WhenOpened": "2025-09-24T14:11:18.113Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "LevelsMenu.cs",
               "DocumentMoniker": "C:\\Users\\\u041A\u0438\u0440\u0438\u043B\\MyFork\\HW-Smart-Enemy-Logic-\\Labirint\\Labirint\\LevelsMenu.cs",
               "RelativeDocumentMoniker": "Labirint\\LevelsMenu.cs",
               "ToolTip": "C:\\Users\\\u041A\u0438\u0440\u0438\u043B\\MyFork\\HW-Smart-Enemy-Logic-\\Labirint\\Labirint\\LevelsMenu.cs",
               "RelativeToolTip": "Labirint\\LevelsMenu.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAgwA0AAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAGgAAAAAAAAAAAAIwIoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-06T04:27:05.417Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "IMoveInput.cs",
-              "DocumentMoniker": "C:\\Users\\\u041A\u0438\u0440\u0438\u043B\\MyFork\\HW-Smart-Enemy-Logic-\\Labirint\\Labirint\\IMoveInput.cs",
-              "RelativeDocumentMoniker": "Labirint\\IMoveInput.cs",
-              "ToolTip": "C:\\Users\\\u041A\u0438\u0440\u0438\u043B\\MyFork\\HW-Smart-Enemy-Logic-\\Labirint\\Labirint\\IMoveInput.cs",
-              "RelativeToolTip": "Labirint\\IMoveInput.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "DocumentIndex": 9,
+              "Title": "NextLevelTrigger.cs",
+              "DocumentMoniker": "C:\\Users\\\u041A\u0438\u0440\u0438\u043B\\MyFork\\HW-Smart-Enemy-Logic-\\Labirint\\Labirint\\NextLevelTrigger.cs",
+              "RelativeDocumentMoniker": "Labirint\\NextLevelTrigger.cs",
+              "ToolTip": "C:\\Users\\\u041A\u0438\u0440\u0438\u043B\\MyFork\\HW-Smart-Enemy-Logic-\\Labirint\\Labirint\\NextLevelTrigger.cs",
+              "RelativeToolTip": "Labirint\\NextLevelTrigger.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-06T04:26:29.371Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "GameData.cs",
-              "DocumentMoniker": "C:\\Users\\\u041A\u0438\u0440\u0438\u043B\\MyFork\\HW-Smart-Enemy-Logic-\\Labirint\\Labirint\\GameData.cs",
-              "RelativeDocumentMoniker": "Labirint\\GameData.cs",
-              "ToolTip": "C:\\Users\\\u041A\u0438\u0440\u0438\u043B\\MyFork\\HW-Smart-Enemy-Logic-\\Labirint\\Labirint\\GameData.cs",
-              "RelativeToolTip": "Labirint\\GameData.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAwwDkAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-06T04:25:49.269Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "ConsoleInput.cs",
-              "DocumentMoniker": "C:\\Users\\\u041A\u0438\u0440\u0438\u043B\\MyFork\\HW-Smart-Enemy-Logic-\\Labirint\\Labirint\\ConsoleInput.cs",
-              "RelativeDocumentMoniker": "Labirint\\ConsoleInput.cs",
-              "ToolTip": "C:\\Users\\\u041A\u0438\u0440\u0438\u043B\\MyFork\\HW-Smart-Enemy-Logic-\\Labirint\\Labirint\\ConsoleInput.cs",
-              "RelativeToolTip": "Labirint\\ConsoleInput.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-06T03:20:19.208Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "VerticalObstacle.cs",
-              "DocumentMoniker": "C:\\Users\\\u041A\u0438\u0440\u0438\u043B\\MyFork\\HW-Smart-Enemy-Logic-\\Labirint\\Labirint\\VerticalObstacle.cs",
-              "RelativeDocumentMoniker": "Labirint\\VerticalObstacle.cs",
-              "ToolTip": "C:\\Users\\\u041A\u0438\u0440\u0438\u043B\\MyFork\\HW-Smart-Enemy-Logic-\\Labirint\\Labirint\\VerticalObstacle.cs",
-              "RelativeToolTip": "Labirint\\VerticalObstacle.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-22T11:39:15.76Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UnitsEnumerator.cs",
-              "DocumentMoniker": "C:\\Users\\\u041A\u0438\u0440\u0438\u043B\\MyFork\\HW-Smart-Enemy-Logic-\\Labirint\\Labirint\\UnitsEnumerator.cs",
-              "RelativeDocumentMoniker": "Labirint\\UnitsEnumerator.cs",
-              "ToolTip": "C:\\Users\\\u041A\u0438\u0440\u0438\u043B\\MyFork\\HW-Smart-Enemy-Logic-\\Labirint\\Labirint\\UnitsEnumerator.cs",
-              "RelativeToolTip": "Labirint\\UnitsEnumerator.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-22T11:39:14.995Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Units.cs",
-              "DocumentMoniker": "C:\\Users\\\u041A\u0438\u0440\u0438\u043B\\MyFork\\HW-Smart-Enemy-Logic-\\Labirint\\Labirint\\Units.cs",
-              "RelativeDocumentMoniker": "Labirint\\Units.cs",
-              "ToolTip": "C:\\Users\\\u041A\u0438\u0440\u0438\u043B\\MyFork\\HW-Smart-Enemy-Logic-\\Labirint\\Labirint\\Units.cs",
-              "RelativeToolTip": "Labirint\\Units.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-22T11:39:14.291Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Unit.cs",
-              "DocumentMoniker": "C:\\Users\\\u041A\u0438\u0440\u0438\u043B\\MyFork\\HW-Smart-Enemy-Logic-\\Labirint\\Labirint\\Unit.cs",
-              "RelativeDocumentMoniker": "Labirint\\Unit.cs",
-              "ToolTip": "C:\\Users\\\u041A\u0438\u0440\u0438\u043B\\MyFork\\HW-Smart-Enemy-Logic-\\Labirint\\Labirint\\Unit.cs",
-              "RelativeToolTip": "Labirint\\Unit.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-22T11:39:13.494Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Player.cs",
-              "DocumentMoniker": "C:\\Users\\\u041A\u0438\u0440\u0438\u043B\\MyFork\\HW-Smart-Enemy-Logic-\\Labirint\\Labirint\\Player.cs",
-              "RelativeDocumentMoniker": "Labirint\\Player.cs",
-              "ToolTip": "C:\\Users\\\u041A\u0438\u0440\u0438\u043B\\MyFork\\HW-Smart-Enemy-Logic-\\Labirint\\Labirint\\Player.cs",
-              "RelativeToolTip": "Labirint\\Player.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-22T11:39:09.986Z",
+              "WhenOpened": "2025-09-24T14:12:37.021Z",
               "EditorCaption": ""
             },
             {
@@ -229,28 +150,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "ConsoleRenderer.cs",
-              "DocumentMoniker": "C:\\Users\\\u041A\u0438\u0440\u0438\u043B\\MyFork\\HW-Smart-Enemy-Logic-\\Labirint\\Labirint\\ConsoleRenderer.cs",
-              "RelativeDocumentMoniker": "Labirint\\ConsoleRenderer.cs",
-              "ToolTip": "C:\\Users\\\u041A\u0438\u0440\u0438\u043B\\MyFork\\HW-Smart-Enemy-Logic-\\Labirint\\Labirint\\ConsoleRenderer.cs",
-              "RelativeToolTip": "Labirint\\ConsoleRenderer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "Player.cs",
+              "DocumentMoniker": "C:\\Users\\\u041A\u0438\u0440\u0438\u043B\\MyFork\\HW-Smart-Enemy-Logic-\\Labirint\\Labirint\\Player.cs",
+              "RelativeDocumentMoniker": "Labirint\\Player.cs",
+              "ToolTip": "C:\\Users\\\u041A\u0438\u0440\u0438\u043B\\MyFork\\HW-Smart-Enemy-Logic-\\Labirint\\Labirint\\Player.cs",
+              "RelativeToolTip": "Labirint\\Player.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAgwDIAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-22T11:39:08.267Z",
+              "WhenOpened": "2025-07-22T11:39:09.986Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "SmartEnemy.cs",
-              "DocumentMoniker": "C:\\Users\\\u041A\u0438\u0440\u0438\u043B\\MyFork\\HW-Smart-Enemy-Logic-\\Labirint\\Labirint\\SmartEnemy.cs",
-              "RelativeDocumentMoniker": "Labirint\\SmartEnemy.cs",
-              "ToolTip": "C:\\Users\\\u041A\u0438\u0440\u0438\u043B\\MyFork\\HW-Smart-Enemy-Logic-\\Labirint\\Labirint\\SmartEnemy.cs",
-              "RelativeToolTip": "Labirint\\SmartEnemy.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 12,
+              "Title": "IRenderer.cs",
+              "DocumentMoniker": "C:\\Users\\\u041A\u0438\u0440\u0438\u043B\\MyFork\\HW-Smart-Enemy-Logic-\\Labirint\\Labirint\\IRenderer.cs",
+              "RelativeDocumentMoniker": "Labirint\\IRenderer.cs",
+              "ToolTip": "C:\\Users\\\u041A\u0438\u0440\u0438\u043B\\MyFork\\HW-Smart-Enemy-Logic-\\Labirint\\Labirint\\IRenderer.cs",
+              "RelativeToolTip": "Labirint\\IRenderer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-22T11:39:05.96Z",
+              "WhenOpened": "2025-09-24T14:10:44.077Z",
               "EditorCaption": ""
             },
             {
@@ -261,9 +182,139 @@
               "RelativeDocumentMoniker": "Labirint\\Program.cs",
               "ToolTip": "C:\\Users\\\u041A\u0438\u0440\u0438\u043B\\MyFork\\HW-Smart-Enemy-Logic-\\Labirint\\Labirint\\Program.cs",
               "RelativeToolTip": "Labirint\\Program.cs",
-              "ViewState": "AgIAACIAAAAAAAAAAAAgwJAAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAABwAAAAAAAAAAAAgwDsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-22T11:39:02.147Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "SmartEnemy.cs",
+              "DocumentMoniker": "C:\\Users\\\u041A\u0438\u0440\u0438\u043B\\MyFork\\HW-Smart-Enemy-Logic-\\Labirint\\Labirint\\SmartEnemy.cs",
+              "RelativeDocumentMoniker": "Labirint\\SmartEnemy.cs",
+              "ToolTip": "C:\\Users\\\u041A\u0438\u0440\u0438\u043B\\MyFork\\HW-Smart-Enemy-Logic-\\Labirint\\Labirint\\SmartEnemy.cs",
+              "RelativeToolTip": "Labirint\\SmartEnemy.cs",
+              "ViewState": "AgIAAFAAAAAAAAAAAAAIwHcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-22T11:39:05.96Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Unit.cs",
+              "DocumentMoniker": "C:\\Users\\\u041A\u0438\u0440\u0438\u043B\\MyFork\\HW-Smart-Enemy-Logic-\\Labirint\\Labirint\\Unit.cs",
+              "RelativeDocumentMoniker": "Labirint\\Unit.cs",
+              "ToolTip": "C:\\Users\\\u041A\u0438\u0440\u0438\u043B\\MyFork\\HW-Smart-Enemy-Logic-\\Labirint\\Labirint\\Unit.cs",
+              "RelativeToolTip": "Labirint\\Unit.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-22T11:39:13.494Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UnitConfig.cs",
+              "DocumentMoniker": "C:\\Users\\\u041A\u0438\u0440\u0438\u043B\\MyFork\\HW-Smart-Enemy-Logic-\\Labirint\\Labirint\\UnitConfig.cs",
+              "RelativeDocumentMoniker": "Labirint\\UnitConfig.cs",
+              "ToolTip": "C:\\Users\\\u041A\u0438\u0440\u0438\u043B\\MyFork\\HW-Smart-Enemy-Logic-\\Labirint\\Labirint\\UnitConfig.cs",
+              "RelativeToolTip": "Labirint\\UnitConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-24T14:15:49.149Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UnitFactory.cs",
+              "DocumentMoniker": "C:\\Users\\\u041A\u0438\u0440\u0438\u043B\\MyFork\\HW-Smart-Enemy-Logic-\\Labirint\\Labirint\\UnitFactory.cs",
+              "RelativeDocumentMoniker": "Labirint\\UnitFactory.cs",
+              "ToolTip": "C:\\Users\\\u041A\u0438\u0440\u0438\u043B\\MyFork\\HW-Smart-Enemy-Logic-\\Labirint\\Labirint\\UnitFactory.cs",
+              "RelativeToolTip": "Labirint\\UnitFactory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-24T14:16:10.261Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Vector2.cs",
+              "DocumentMoniker": "C:\\Users\\\u041A\u0438\u0440\u0438\u043B\\MyFork\\HW-Smart-Enemy-Logic-\\Labirint\\Labirint\\Vector2.cs",
+              "RelativeDocumentMoniker": "Labirint\\Vector2.cs",
+              "ToolTip": "C:\\Users\\\u041A\u0438\u0440\u0438\u043B\\MyFork\\HW-Smart-Enemy-Logic-\\Labirint\\Labirint\\Vector2.cs",
+              "RelativeToolTip": "Labirint\\Vector2.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-06T04:30:57.991Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "VerticalObstacle.cs",
+              "DocumentMoniker": "C:\\Users\\\u041A\u0438\u0440\u0438\u043B\\MyFork\\HW-Smart-Enemy-Logic-\\Labirint\\Labirint\\VerticalObstacle.cs",
+              "RelativeDocumentMoniker": "Labirint\\VerticalObstacle.cs",
+              "ToolTip": "C:\\Users\\\u041A\u0438\u0440\u0438\u043B\\MyFork\\HW-Smart-Enemy-Logic-\\Labirint\\Labirint\\VerticalObstacle.cs",
+              "RelativeToolTip": "Labirint\\VerticalObstacle.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-22T11:39:15.76Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "IMoveInput.cs",
+              "DocumentMoniker": "C:\\Users\\\u041A\u0438\u0440\u0438\u043B\\MyFork\\HW-Smart-Enemy-Logic-\\Labirint\\Labirint\\IMoveInput.cs",
+              "RelativeDocumentMoniker": "Labirint\\IMoveInput.cs",
+              "ToolTip": "C:\\Users\\\u041A\u0438\u0440\u0438\u043B\\MyFork\\HW-Smart-Enemy-Logic-\\Labirint\\Labirint\\IMoveInput.cs",
+              "RelativeToolTip": "Labirint\\IMoveInput.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-06T04:26:29.371Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "GameData.cs",
+              "DocumentMoniker": "C:\\Users\\\u041A\u0438\u0440\u0438\u043B\\MyFork\\HW-Smart-Enemy-Logic-\\Labirint\\Labirint\\GameData.cs",
+              "RelativeDocumentMoniker": "Labirint\\GameData.cs",
+              "ToolTip": "C:\\Users\\\u041A\u0438\u0440\u0438\u043B\\MyFork\\HW-Smart-Enemy-Logic-\\Labirint\\Labirint\\GameData.cs",
+              "RelativeToolTip": "Labirint\\GameData.cs",
+              "ViewState": "AgIAAIMAAAAAAAAAAAAQwKIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-06T04:25:49.269Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ConsoleRenderer.cs",
+              "DocumentMoniker": "C:\\Users\\\u041A\u0438\u0440\u0438\u043B\\MyFork\\HW-Smart-Enemy-Logic-\\Labirint\\Labirint\\ConsoleRenderer.cs",
+              "RelativeDocumentMoniker": "Labirint\\ConsoleRenderer.cs",
+              "ToolTip": "C:\\Users\\\u041A\u0438\u0440\u0438\u043B\\MyFork\\HW-Smart-Enemy-Logic-\\Labirint\\Labirint\\ConsoleRenderer.cs",
+              "RelativeToolTip": "Labirint\\ConsoleRenderer.cs",
+              "ViewState": "AgIAADgAAAAAAAAAAAAIwFYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-22T11:39:08.267Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "ConsoleInput.cs",
+              "DocumentMoniker": "C:\\Users\\\u041A\u0438\u0440\u0438\u043B\\MyFork\\HW-Smart-Enemy-Logic-\\Labirint\\Labirint\\ConsoleInput.cs",
+              "RelativeDocumentMoniker": "Labirint\\ConsoleInput.cs",
+              "ToolTip": "C:\\Users\\\u041A\u0438\u0440\u0438\u043B\\MyFork\\HW-Smart-Enemy-Logic-\\Labirint\\Labirint\\ConsoleInput.cs",
+              "RelativeToolTip": "Labirint\\ConsoleInput.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-06T03:20:19.208Z",
               "EditorCaption": ""
             }
           ]

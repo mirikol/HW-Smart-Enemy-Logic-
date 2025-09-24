@@ -1,78 +1,139 @@
 ﻿namespace Labirint
 {
-    public class LevelsMenu : IDisposable
+    public class LevelsMenu
     {
-        private ConsoleInput _input;
-        private ConsoleRenderer _renderer;
         private GameData _gameData;
+        private ConsoleInput _input;
+        private IRenderer _renderer;
+        private UnitFactory _unitFactory;
+        private string _currentLevel;
+        private List<NextLevelTrigger> _currentTriggers = new List<NextLevelTrigger>();
 
-        public LevelsMenu(ConsoleInput input, ConsoleRenderer renderer, GameData gameData)
+        public LevelsMenu(GameData gameData, ConsoleInput input, IRenderer renderer, UnitFactory unitFactory)
         {
-            _input = input;
-            _input.Esc += ShowMenu;
-            _renderer = renderer;
             _gameData = gameData;
+            _input = input;
+            _renderer = renderer;
+            _unitFactory = unitFactory;
+
+            _input.Esc += SetMenu;
         }
 
-        public void ShowMenu()
+        public void SetMenu()
         {
-            Console.Clear();
+            _renderer.Clear();
             Console.WriteLine("Выберите уровень");
-            Console.WriteLine("Level 1");
-            Console.WriteLine("Level 2");
-
+            foreach (var levelMap in _gameData.LevelMaps)
+            {
+                Console.WriteLine(levelMap.Key);
+            }
             string input = Console.ReadLine();
-            SetLevel(input);
+
+            if (_gameData.LevelMaps.ContainsKey(input))
+                SetLevel(input);
+            else
+                SetMenu();
         }
 
         public void SetLevel(string level)
         {
-            Program.ClearAllUnits();
-            _gameData.ClearUnits();
+            _currentLevel = level;
             Console.Clear();
+            Console.SetCursorPosition(0, 0);
             _renderer.Clear();
-            _gameData.SetMap(level);
 
-            RenderMap();
+            LevelModel.ClearUnits();
+            LevelModel.SetMap(_gameData.LevelMaps[level]);
+            SetMapPixels(_gameData.LevelMaps[level]);
 
-            Player player = new Player(new Vector2(1, 1), '@', _renderer, _input);
-            VerticalObstacle obstacle = new VerticalObstacle(new Vector2(2, 5), '!', _renderer);
-            SmartEnemy enemy = new SmartEnemy(new Vector2(16, 8), '$', _renderer, player);
+            foreach (var trigger in _currentTriggers)
+            {
+                trigger.OnNextLevel -= GoToNextLevel;
+                trigger.Unsubscribe();
+            }
 
-            _gameData.AddUnit(player);
-            _gameData.AddUnit(enemy);
-            _gameData.AddUnit(obstacle);
+            _currentTriggers.Clear();
 
-            Program.SetPlayer(player);
-            Program.SetEnemy(enemy);
-            Program.SetObstacle(obstacle);
+            if (_gameData.LevelUnits.TryGetValue(level, out var unitConfigs))
+            {
+                SetUnits(unitConfigs);
+            }
+            else
+            {
+                Console.WriteLine($"Для уровня {level} нет юнитов.");
+            }
 
-            foreach (Unit unit in _gameData.GetUnits())
+            if (_gameData.LevelEnemies.TryGetValue(level, out var enemyConfigs))
+            {
+                SetUnits(enemyConfigs);
+            }
+
+            if (_gameData.LevelNextLevelTriggers.TryGetValue(level, out var triggerConfigs))
+            {
+                foreach (var config in triggerConfigs)
+                {
+                    var trigger = new NextLevelTrigger(config.Position, config.View, _renderer);
+                    trigger.OnNextLevel += GoToNextLevel;
+                    LevelModel.AddUnit(trigger);
+                    _currentTriggers.Add(trigger);
+                }
+            }
+
+            foreach (var unit in LevelModel.Units)
             {
                 unit.Render();
             }
+            LevelModel.Player?.Render();
 
             _renderer.Render();
+            Thread.Sleep(50);
         }
 
-        private void RenderMap()
+        private void GoToNextLevel()
         {
-            char[,] map = _gameData.GetMap();
-            if (map == null)
-                return;
+            string nextLevel = GetNextLevel(_currentLevel);
 
-            for (int y = 0; y < map.GetLength(0); y++)
+            if (nextLevel != null)
             {
-                for (int x = 0; x < map.GetLength(1); x++)
+                SetLevel(nextLevel);
+            }
+            else
+            {
+                Console.Clear();
+                Console.WriteLine("Поздравляем! Вы прошли все уровни!");
+                Environment.Exit(0);
+            }
+        }
+
+        private string GetNextLevel(string currentLevel)
+        {
+            var levels = _gameData.LevelMaps.Keys.ToList();
+            int currrentIndex = levels.IndexOf(currentLevel);
+
+            if (currrentIndex < levels.Count - 1)
+            {
+                return levels[currrentIndex + 1];
+            }
+            return null;
+        }
+
+        public void SetMapPixels(char[,] map)
+        {
+            for (int i = 0; i < map.GetLength(0); i++)
+            {
+                for (int j = 0; j < map.GetLength(1); j++)
                 {
-                    _renderer.SetPixel(x, y, map[y, x]);
+                    _renderer.SetCell(j, i, map[i, j].ToString());
                 }
             }
         }
 
-        public void Dispose()
+        public void SetUnits(List<UnitConfig> units)
         {
-            _input.Esc -= ShowMenu;
+            foreach (var unitConfig in units)
+            {
+                _unitFactory.CreateUnit(unitConfig);
+            }
         }
     }
 }

@@ -2,11 +2,11 @@
 {
     public class ConsoleInput : IMoveInput
     {
-        public event Action MoveUp;
-        public event Action MoveDown;
-        public event Action MoveLeft;
-        public event Action MoveRight;
-        public event Action Esc;
+        public event Action MoveUp = delegate { };
+        public event Action MoveDown = delegate { };
+        public event Action MoveLeft = delegate { };
+        public event Action MoveRight = delegate { };
+        public event Action Esc = delegate { };
 
         public void Update()
         {

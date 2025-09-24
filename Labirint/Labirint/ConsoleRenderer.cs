@@ -1,6 +1,6 @@
 ﻿namespace Labirint
 {
-    public class ConsoleRenderer
+    public class ConsoleRenderer : IRenderer
     {
         private char[,] _pixels;
         private char[,] _priviousPixels;
@@ -16,7 +16,7 @@
             Console.CursorVisible = false;
         }
 
-        public void SetPixel(int x, int y, char val)
+        private void SetPixel(int x, int y, char val)
         {
             if (x < 0 || x >= _width || y < 0 || y >= _height)
                 return;
@@ -75,6 +75,13 @@
                     _priviousPixels[x, y] = ' ';
                 }
             }
+
+            Console.Clear();
+        }
+
+        public void SetCell(int x, int y, string val)
+        {
+            SetPixel(x, y, val[0]);
         }
     }
 }

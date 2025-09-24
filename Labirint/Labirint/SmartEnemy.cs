@@ -6,10 +6,10 @@
         private int[] dx = { -1, 0, 1, 0 };
         private int[] dy = { 0, 1, 0, -1 };
 
-        public SmartEnemy(Vector2 startPosition, char symbol, ConsoleRenderer renderer, Unit target) :
-            base(startPosition, symbol, renderer)
+        public SmartEnemy(Vector2 startPosition, string view, IRenderer renderer) :
+            base(startPosition, view, renderer)
         {
-            _target = target;
+            _target = LevelModel.Player;
         }
 
         public void SetTarget(Unit? target)
@@ -19,10 +19,15 @@
                 _target = target;
             }
         }
+
         public override void Update()
         {
             if (_target == null)
-                return;
+            {
+                _target = LevelModel.Player;
+                if (_target == null)
+                    return;
+            }
 
             List<Node> path = FindPath();
 
@@ -99,7 +104,7 @@
 
         private bool IsValid(int x, int y)
         {
-            char[,] map = GameData.GetInstance().GetMap();
+            char[,] map = LevelModel.GetMap();
             bool containsX = x >= 0 && x < map.GetLength(1);
             bool containsY = y >= 0 && y < map.GetLength(0);
             bool isNotWall = map[y, x] != '#';

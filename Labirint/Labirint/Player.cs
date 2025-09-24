@@ -4,12 +4,13 @@
     {
         public IMoveInput _input;
 
+        public event Action GameOver;
         private Action _moveUpHandler;
         private Action _moveDownHandler;
         private Action _moveRightHandler;
         private Action _moveLeftHandler;
 
-        public Player(Vector2 startPosition, char symbol, ConsoleRenderer renderer, IMoveInput input) : base(startPosition, symbol, renderer)
+        public Player(Vector2 startPosition, string view, IRenderer renderer, IMoveInput input) : base(startPosition, view, renderer)
         {
             _input = input;
 
@@ -24,16 +25,27 @@
             input.MoveLeft += _moveLeftHandler;
         }
 
-        public override void Unsubscribe()
+        public override void Dispose()
         {
             _input.MoveUp -= _moveUpHandler;
             _input.MoveDown -= _moveDownHandler;
             _input.MoveRight -= _moveRightHandler;
             _input.MoveLeft -= _moveLeftHandler;
+
+            base.Dispose();
         }
 
         public override void Update()
         {
+            foreach (Unit unit in LevelModel.Units)
+            {
+                if (unit == this)
+                    continue;
+
+                if (Position.Equals(unit.Position))
+                    GameOver?.Invoke();
+                return;
+            }
         }
     }
 }
