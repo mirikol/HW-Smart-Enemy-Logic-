@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Labirint")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+01eab72e3cb47a2c86ea2f63da2bed81725949c4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e4ab3dfb907aeeab562fef7ed41239bc584acfef")]
 [assembly: System.Reflection.AssemblyProductAttribute("Labirint")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Labirint")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
